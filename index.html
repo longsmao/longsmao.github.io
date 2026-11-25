@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>礼承 · 单机桌面电子礼簿_礼金记账软件 — 礼来礼往，一笔不差</title>
+<meta name="description" content="礼承：面向婚宴、寿宴、满月酒等各类酒席家事的人情礼金记账桌面软件，家中百事皆可一簿承之。单机运行、数据存本机 SQLite，收礼台 3 秒快速入账、自动打印热敏回执、抽奖大屏、多礼簿管理，现场无网络照常使用。">
+<meta name="keywords" content="电子礼簿,礼金记账软件,婚礼记账,收礼台,人情记账,婚宴礼簿,单机版礼簿,礼承">
+<meta name="robots" content="index, follow">
+<meta name="author" content="礼承">
+<link rel="canonical" href="https://longsmao.github.io/">
+<meta name="theme-color" content="#a3232b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23a3232b'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23fff' font-family='serif'%3E礼%3C/text%3E%3C/svg%3E">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="礼承">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="礼承 · 单机桌面电子礼簿 — 礼来礼往，一笔不差">
+<meta property="og:description" content="婚宴、寿宴、满月酒，家中百事皆可用的人情礼金记账桌面软件：3 秒入账、热敏回执即打即撕、抽奖大屏，数据全程留存本机。">
+<meta property="og:url" content="https://longsmao.github.io/">
+<meta property="og:image" content="https://longsmao.github.io/images/fx.png">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="礼承 · 单机桌面电子礼簿">
+<meta name="twitter:description" content="人情礼金记账桌面软件：3 秒入账、回执即打即撕、抽奖大屏，数据留存本机。">
+<meta name="twitter:image" content="https://longsmao.github.io/images/fx.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "礼承",
+  "alternateName": "礼承电子礼簿",
+  "image": "https://longsmao.github.io/images/fx.png",
+  "description": "面向婚宴、寿宴、满月酒及家中百事的人情礼金记账单机桌面软件，收礼台快速入账、自动打印回执、抽奖大屏，数据留存本机。",
+  "operatingSystem": "Windows 10, Windows 11 (64-bit)",
+  "applicationCategory": "BusinessApplication",
+  "softwareVersion": "1.0.0",
+  "url": "https://longsmao.github.io/",
+  "downloadUrl": "https://github.com/longsmao/longsmao.github.io/releases/download/v1.0.0/licheng-setup-1.0.0.exe",
+  "offers": { "@type": "Offer", "price": "29.9", "priceCurrency": "CNY", "description": "一机一码永久授权" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "数据存在哪里？会不会丢？", "acceptedAnswer": { "@type": "Answer", "text": "账库是安装目录下的 licheng.db 文件，设置页可一键备份到 backups/ 目录；把整个目录拷走即完成迁移。" } },
+    { "@type": "Question", "name": "礼承需要联网吗？", "acceptedAnswer": { "@type": "Answer", "text": "不需要。所有功能（含语音播报）均在本机完成，宴会现场无网络照常使用。" } },
+    { "@type": "Question", "name": "换电脑了怎么办？", "acceptedAnswer": { "@type": "Answer", "text": "授权与本机硬件绑定，一机一码，不支持换机使用。换机需重新授权：把新机器码发给客服重新签发激活码，账库文件拷过去即可继续使用。" } },
+    { "@type": "Question", "name": "小票打印机支持哪些？", "acceptedAnswer": { "@type": "Answer", "text": "常见 58mm / 80mm 热敏小票机，Windows 驱动识别后即可在设置里配置纸宽与打印份数。" } }
+  ]
+}
+</script>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header>
+  <div class="brand"><span class="seal serif">礼</span><div class="btxt"><b class="serif">礼承</b><small>电子礼簿 · 单机桌面版</small></div></div>
+  <nav>
+    <a href="#features">功能</a>
+    <a href="#gallery">界面实景</a>
+    <a href="#faq">常见问题</a>
+    <a class="buy" href="buy.html">授权购买</a>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="silk"></div>
+  <canvas id="ptx"></canvas>
+  <div class="wm" id="wm">礼</div>
+  <svg class="ribbon r1" viewBox="0 0 400 120" fill="none"><path d="M0 70 C80 10 160 110 240 50 S380 20 400 60" stroke="url(#g1)" stroke-width="26" stroke-linecap="round" opacity=".35"/><defs><linearGradient id="g1" x1="0" y1="0" x2="400" y2="0"><stop stop-color="#e6c887" stop-opacity="0"/><stop offset=".5" stop-color="#e6c887"/><stop offset="1" stop-color="#e6c887" stop-opacity="0"/></linearGradient></defs></svg>
+  <svg class="ribbon r2" viewBox="0 0 400 120" fill="none"><path d="M0 50 C90 110 170 10 260 70 S370 100 400 40" stroke="url(#g2)" stroke-width="20" stroke-linecap="round" opacity=".3"/><defs><linearGradient id="g2" x1="0" y1="0" x2="400" y2="0"><stop stop-color="#f9edda" stop-opacity="0"/><stop offset=".5" stop-color="#f9edda"/><stop offset="1" stop-color="#f9edda" stop-opacity="0"/></linearGradient></defs></svg>
+
+  <h1 class="serif" id="bigtitle">礼承</h1>
+  <div class="sub serif">礼来礼往 · 一笔不差</div>
+  <p class="desc">婚宴、寿宴、满月酒，家中百事，皆一簿承之：收礼三秒入账，回执即打即撕，散席账目自动成册——每一份人情，都记得明明白白。</p>
+  <div class="cta">
+    <a class="btn btn-main" href="https://github.com/longsmao/longsmao.github.io/releases/download/v1.0.0/licheng-setup-1.0.0.exe">下载 Windows 版</a>
+    <a class="btn btn-ghost" href="#features">先看看功能</a>
+  </div>
+  <div class="meta">v1.0.0 · Windows 10/11 (64 位) · 安装包约 87 MB · 无需联网</div>
+  <div class="scroll-hint">⌄</div>
+  <div class="wave"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 40 C240 90 480 0 720 35 S1200 80 1440 30 L1440 90 L0 90 Z" fill="#faf6ef"/></svg></div>
+</section>
+
+<!-- 卡牌装饰图案库：回纹角花 / 印章金环 / 墨痕山丘 / 祥云饰线 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="cardArt" viewBox="0 0 172 249">
+    <g fill="none" stroke="#c9a04d" stroke-width="1">
+      <rect x="8.5" y="8.5" width="155" height="232" rx="10" opacity=".5"/>
+      <rect x="14.5" y="14.5" width="143" height="220" rx="7" opacity=".26"/>
+      <!-- 角花只放右上/左下，与左上/右下的牌角标错位呼应 -->
+      <path d="M136 20 H152 V36 H142 V26 H148" opacity=".7"/>
+      <path d="M36 229 H20 V213 H30 V223 H24" opacity=".7"/>
+      <path d="M56 27 H38 M116 27 H134" opacity=".4"/>
+      <circle cx="86" cy="96" r="45" opacity=".2" stroke-dasharray="3 5"/>
+      <circle cx="86" cy="96" r="38" opacity=".38"/>
+      <g stroke-width="1.2" opacity=".48">
+        <path d="M86 46 v6 M86 140 v6 M36 96 h6 M130 96 h6"/>
+        <path d="M51 61 l4.5 4.5 M121 61 l-4.5 4.5 M51 131 l4.5 -4.5 M121 131 l-4.5 -4.5"/>
+      </g>
+    </g>
+    <rect x="82.6" y="23.6" width="6.8" height="6.8" transform="rotate(45 86 27)" fill="#c9a04d" opacity=".72"/>
+    <path d="M14.5 176 Q45 158 72 172 T122 168 Q145 162 157.5 172 L157.5 192 L14.5 192 Z" fill="#a3232b" opacity=".045"/>
+    <path d="M14.5 186 Q52 172 86 182 T157.5 180 L157.5 197 L14.5 197 Z" fill="#a3232b" opacity=".035"/>
+  </symbol>
+</svg>
+
+<section id="features">
+<div class="scatter-scene" id="scatterScene" aria-hidden="true">
+  <div class="sc-card"><span class="sc-pip tl"><i>壹</i><b>账</b></span><span class="sc-pip br"><i>壹</i><b>账</b></span><span class="sc-gh">账</span><svg class="sc-art" viewBox="0 0 172 249" preserveAspectRatio="xMidYMid meet"><use href="#cardArt"/></svg><div class="sc-ic">账</div><div class="sc-tt">收礼台 · 快速入账</div><div class="sc-ds">宾客姓名电话一点即录，3 秒一位</div></div>
+  <div class="sc-card"><span class="sc-pip tl"><i>贰</i><b>票</b></span><span class="sc-pip br"><i>贰</i><b>票</b></span><span class="sc-gh">票</span><svg class="sc-art" viewBox="0 0 172 249" preserveAspectRatio="xMidYMid meet"><use href="#cardArt"/></svg><div class="sc-ic">票</div><div class="sc-tt">回执即打即撕</div><div class="sc-ds">连打连撕热敏回执，当场给票</div></div>
+  <div class="sc-card"><span class="sc-pip tl"><i>叁</i><b>簿</b></span><span class="sc-pip br"><i>叁</i><b>簿</b></span><span class="sc-gh">簿</span><svg class="sc-art" viewBox="0 0 172 249" preserveAspectRatio="xMidYMid meet"><use href="#cardArt"/></svg><div class="sc-ic">簿</div><div class="sc-tt">多礼簿管理</div><div class="sc-ds">婚丧寿乔迁多场同办，分簿分账</div></div>
+  <div class="sc-card"><span class="sc-pip tl"><i>肆</i><b>页</b></span><span class="sc-pip br"><i>肆</i><b>页</b></span><span class="sc-gh">页</span><svg class="sc-art" viewBox="0 0 172 249" preserveAspectRatio="xMidYMid meet"><use href="#cardArt"/></svg><div class="sc-ic">页</div><div class="sc-tt">礼簿账页</div><div class="sc-ds">竖排名帖式账页，红冲作废可查</div></div>
+  <div class="sc-card"><span class="sc-pip tl"><i>伍</i><b>奖</b></span><span class="sc-pip br"><i>伍</i><b>奖</b></span><span class="sc-gh">奖</span><svg class="sc-art" viewBox="0 0 172 249" preserveAspectRatio="xMidYMid meet"><use href="#cardArt"/></svg><div class="sc-ic">奖</div><div class="sc-tt">抽奖大屏</div><div class="sc-ds">滚动开奖投给宾客，名单留档</div></div>
+  <div class="sc-card"><span class="sc-pip tl"><i>陆</i><b>核</b></span><span class="sc-pip br"><i>陆</i><b>核</b></span><span class="sc-gh">核</span><svg class="sc-art" viewBox="0 0 172 249" preserveAspectRatio="xMidYMid meet"><use href="#cardArt"/></svg><div class="sc-ic">核</div><div class="sc-tt">分析统计</div><div class="sc-ds">总额笔数渠道归属，事后对账不慌</div></div>
+  <div class="sc-card"><span class="sc-pip tl"><i>柒</i><b>声</b></span><span class="sc-pip br"><i>柒</i><b>声</b></span><span class="sc-gh">声</span><svg class="sc-art" viewBox="0 0 172 249" preserveAspectRatio="xMidYMid meet"><use href="#cardArt"/></svg><div class="sc-ic">声</div><div class="sc-tt">入账语音播报</div><div class="sc-ds">每笔自动报账，嘈杂现场能核账</div></div>
+  <div class="sc-card"><span class="sc-pip tl"><i>捌</i><b>档</b></span><span class="sc-pip br"><i>捌</i><b>档</b></span><span class="sc-gh">档</span><svg class="sc-art" viewBox="0 0 172 249" preserveAspectRatio="xMidYMid meet"><use href="#cardArt"/></svg><div class="sc-ic">档</div><div class="sc-tt">数据在本机</div><div class="sc-ds">本地账库，一键备份</div></div>
+</div>
+
+  <div class="sec-head reveal">
+    <div class="no">壹</div>
+    <div class="orn"><i></i></div>
+    <h2 class="serif">现场记账，一套管齐</h2>
+    <p>从宾客落笔到大屏抽奖，门口那桌要用的它都有</p>
+  </div>
+  <div class="fgrid">
+    <div class="fcard reveal"><span class="no">壹</span><div class="ic">账</div><h3>收礼台 · 快速入账</h3><p>姓名拼音首字母检索、金额快捷档、大写金额实时生成，回车即入账，重复礼金自动提醒。</p></div>
+    <div class="fcard reveal"><span class="no">贰</span><div class="ic">票</div><h3>回执即打即撕</h3><p>入账自动连打小票回执，58/80mm 热敏小票机即插即用，份数与字段可配。</p></div>
+    <div class="fcard reveal"><span class="no">叁</span><div class="ic">簿</div><h3>多礼簿管理</h3><p>男方女方分开记账、流水号前缀独立，每本礼簿自带管理密码与绸缎主题。</p></div>
+    <div class="fcard reveal"><span class="no">肆</span><div class="ic">页</div><h3>礼簿账页</h3><p>竖排名帖式账页、红冲作废、退礼标注、按页栏数自适应不同屏幕。</p></div>
+    <div class="fcard reveal"><span class="no">伍</span><div class="ic">奖</div><h3>抽奖大屏</h3><p>奖品池、中奖名单、滚动开奖一体，现场大屏直接投给宾客看。</p></div>
+    <div class="fcard reveal"><span class="no">陆</span><div class="ic">核</div><h3>分析统计</h3><p>礼金总额、笔数、渠道占比、双方归属一目了然，事后对账不慌。</p></div>
+    <div class="fcard reveal"><span class="no">柒</span><div class="ic">声</div><h3>入账语音播报</h3><p>每收一笔自动播报「××送礼××元」，嘈杂现场也能核账，可随时关闭。</p></div>
+    <div class="fcard reveal"><span class="no">捌</span><div class="ic">档</div><h3>数据在本机</h3><p>本地账库随程序目录存放，一键备份；锁屏绸缎界面防误碰。</p></div>
+  </div>
+
+</section>
+
+<section id="details" class="strip">
+  <div class="wrap">
+    <div class="reveal"><div class="num serif">3 秒</div><div class="lbl">一位宾客平均入账时间</div></div>
+    <div class="reveal"><div class="num serif">0 联网</div><div class="lbl">现场无网络也能完整运行</div></div>
+    <div class="reveal"><div class="num serif">2 本+</div><div class="lbl">男女方分簿同场各记各账</div></div>
+    <div class="reveal"><div class="num serif">1 键</div><div class="lbl">账库备份导出，换机即恢复</div></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="sec-head reveal">
+    <div class="no">贰</div>
+    <div class="orn"><i></i></div>
+    <h2 class="serif">功能细节 · 界面实景</h2>
+    <p>以下均为礼承桌面版真实运行画面</p>
+  </div>
+  <div class="shots">
+    <div class="srow">
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 启动</b></span><img src="images/01-splash.webp" loading="lazy" alt="启动页"></div><figcaption><em>壹</em>绸缎启动页 · 主题随簿</figcaption></figure>
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 礼簿列表</b></span><img src="images/02-home.webp" loading="lazy" alt="礼簿列表"></div><figcaption><em>贰</em>多簿管理 · 一场一簿</figcaption></figure>
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 新建礼簿</b></span><img src="images/03-book-modal.png" loading="lazy" alt="新建礼簿"></div><figcaption><em>叁</em>新建礼簿 · 婚丧寿乔迁</figcaption></figure>
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 口令</b></span><img src="images/04-enter-password.png" loading="lazy" alt="管理口令"></div><figcaption><em>肆</em>管理口令 · 进簿守卫</figcaption></figure>
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 收礼台</b></span><img src="images/05-desk.png" loading="lazy" alt="收礼台"></div><figcaption><em>伍</em>收礼台 · 3 秒入账</figcaption></figure>
+    </div>
+    <div class="srow">
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 礼簿</b></span><img src="images/06-ledger.png" loading="lazy" alt="礼簿账页"></div><figcaption><em>陆</em>账页 · 竖排名帖式</figcaption></figure>
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 作废留痕</b></span><img src="images/07-void.png" loading="lazy" alt="红冲作废"></div><figcaption><em>柒</em>红冲作废 · 退礼标注</figcaption></figure>
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 分析统计</b></span><img src="images/08-stats.png" loading="lazy" alt="分析统计"></div><figcaption><em>捌</em>分析统计 · 事后对账</figcaption></figure>
+      <figure class="shot reveal"><div class="win"><span class="bar"><i></i><i></i><i></i><b>礼承 · 抽奖大屏</b></span><img src="images/11-lottery.webp" loading="lazy" alt="抽奖大屏"></div><figcaption><em>玖</em>抽奖大屏 · 滚动开奖</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="sec-head reveal">
+    <div class="no">叁</div>
+    <div class="orn"><i></i></div>
+    <h2 class="serif">常见问题</h2>
+  </div>
+  <div class="faq reveal">
+    <details><summary><span class="qno">壹</span>数据存在哪里？会不会丢？<i class="fold"></i></summary><p>账库是安装目录下的 licheng.db 文件，设置页可一键备份到 backups/ 目录；把整个目录拷走即完成迁移。</p></details>
+    <details><summary><span class="qno">贰</span>需要联网吗？<i class="fold"></i></summary><p>不需要。所有功能（含语音播报）均在本机完成，宴会现场无网络照常使用。</p></details>
+    <details><summary><span class="qno">叁</span>换电脑了怎么办？<i class="fold"></i></summary><p>授权与本机硬件绑定，一机一码，不支持换机使用。换机需重新授权：把新机器码发给客服重新签发激活码，账库文件拷过去即可继续使用。</p></details>
+    <details><summary><span class="qno">肆</span>小票打印机支持哪些？<i class="fold"></i></summary><p>常见 58mm / 80mm 热敏小票机，Windows 驱动识别后即可在设置里配置纸宽与打印份数。</p></details>
+  </div>
+  <!-- 板块底部下载栏 -->
+  <div class="faq-dl reveal">
+    <span class="fd-seal">礼</span>
+    <div class="fd-txt">
+      <b class="serif">现在就把礼承带回宴会现场</b>
+      <span>Windows 10 / 11 · 免安装单机版 · 数据全程留存本机</span>
+    </div>
+    <a class="btn btn-main" href="https://github.com/longsmao/longsmao.github.io/releases/download/v1.0.0/licheng-setup-1.0.0.exe">下载 Windows 版</a>
+  </div>
+</section>
+
+<footer>
+  <b class="serif">礼承</b> · 礼来礼往，一笔不差<br>
+  单机桌面礼簿 · Windows · 本软件数据全程留存本机
+  <div class="beian">
+    © 2026 longmao 保留所有权利 ·
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">ICP备XXXXXXXX号-X</a> ·
+    <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener">公网安备 XXXXXXXXXXXXXXXX号</a>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // 扇形封面阵：扇形（首屏底部）→ 收拢成横排列表，直接落位为第二屏内容 → 离开功能区才淡出
+  (function () {
+    const scene = document.getElementById('scatterScene');
+    if (!scene) return;
+    const cards = Array.from(scene.children);
+    const n = cards.length;
+    const feat = document.getElementById('features');
+    let live = false, geom = [];
+    const clamp = v => Math.min(1, Math.max(0, v));
+    function layout() {
+      live = innerWidth >= 1000 && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+      scene.classList.toggle('on', live);
+      if (!live) return;
+      const W = scene.clientWidth, vh = innerHeight;  // 宽度取容器、高度取视口（区块含礼簿实拍后高于一屏）
+      // 八卡实际尺寸一致，扇形与列表同大小（不缩放）
+      // 两排顶边以标题区实际底缘为准，绝不被文字遮挡；空间不足则等比缩卡
+      const head = feat.querySelector('.sec-head');
+      const headB = head.offsetTop + head.offsetHeight;
+      let w = Math.round(Math.min(W * .48, vh * .60)), h = Math.round(w * 1.55);
+      const avail = vh - headB - vh * .04;
+      if (h * 2.05 > avail) { h = Math.floor(avail / 2.05); w = Math.round(h / 1.45); }
+      if (w < 210) { w = 210; h = Math.round(w * 1.45); }   // 可读性下限：放不下就加高区块滚动，不再压卡
+      const hg = w * .16, vg = h * .05, blk = headB + vh * .02;
+      feat.style.minHeight = Math.max(Math.ceil(vh * 1.05), Math.ceil(blk + 2 * h + vg + vh * .05)) + 'px';
+      // 规范手牌阵：等距铺开（每张偏移 0.58 卡宽，均匀叠压 42%），旋转 -21°~+21° 等差，左→右一张压一张
+      const half = (n - 1) / 2, step = w * .58, rStep = 32 / (n - 1), arc = h * .22;
+      geom = cards.map((c, i) => {
+        c.style.setProperty('--w', w + 'px');
+        c.style.setProperty('--h', h + 'px');
+        const t = (i - half) / half;                    // -1..+1 均匀参数
+        return {
+          fx: W / 2 + (i - half) * step - w / 2,
+          fy: -h / 2 + arc * t * t,                     // 扇形骑在区块顶边：上半溢出进首屏、下半不出区块
+          r: (i - half) * rStep,
+          z: i + 1,
+          rx: W / 2 + (i % 4 - 1.5) * (w + hg) - w / 2,// 两排位：上排壹-肆、下排伍-捌
+          ry: blk + (i < 4 ? 0 : h + vg)
+        };
+      });
+      apply();
+    }
+    function apply() {
+      if (!live) return;
+      const vh = innerHeight, s = scrollY, top = feat.offsetTop;
+      // 区块顶边进屏即见半露扇形；第二屏对齐瞬间（top）收拢成两排，之后卡牌随区块一起滚出，绝不越下界
+      const p1 = clamp((s - top + vh) / (vh * .9));
+      const e1 = p1 * p1 * (3 - 2 * p1);
+      scene.style.setProperty('--copy', e1.toFixed(3));
+      scene.classList.toggle('listed', e1 > .98);
+      cards.forEach((c, i) => {
+        const g = geom[i];
+        const x = g.fx + (g.rx - g.fx) * e1;
+        const y = g.fy + (g.ry - g.fy) * e1;
+        c.style.transform = `translate(${x}px, ${y}px) rotate(${(g.r * (1 - e1)).toFixed(2)}deg) translateY(var(--lift, 0px))`;
+        c.style.zIndex = g.z;
+      });
+    }
+    let raf = 0;
+    addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; apply(); }); }, { passive: true });
+    let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 150); });
+    layout();
+  })();
+
+  // 顶栏：滚出首屏后变纸色
+  const hero = document.getElementById('hero'), hdr = document.querySelector('header');
+  addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > hero.offsetHeight - 70), { passive: true });
+
+  // 标题逐字入场
+  const t = document.getElementById('bigtitle');
+  t.innerHTML = [...t.textContent].map((c, i) => `<span class="ch" style="animation-delay:${.15 + i * .18}s">${c}</span>`).join('');
+
+  // 金色粒子：缓缓上浮、明灭
+  const cv = document.getElementById('ptx'), cx = cv.getContext('2d');
+  let W, H, pts = [];
+  function fit() {
+    W = cv.width = hero.clientWidth; H = cv.height = hero.clientHeight;
+    pts = Array.from({ length: 70 }, () => ({
+      x: Math.random() * W, y: Math.random() * H, r: .6 + Math.random() * 1.8,
+      v: .15 + Math.random() * .45, a: Math.random() * Math.PI * 2, s: .4 + Math.random() * .8
+    }));
+  }
+  fit(); addEventListener('resize', fit);
+  (function tick() {
+    cx.clearRect(0, 0, W, H);
+    for (const p of pts) {
+      p.y -= p.v; p.a += .012 * p.s;
+      if (p.y < -6) { p.y = H + 6; p.x = Math.random() * W; }
+      const al = .25 + .55 * Math.abs(Math.sin(p.a));
+      cx.beginPath(); cx.arc(p.x, p.y, p.r, 0, 7);
+      cx.fillStyle = `rgba(230, 200, 135, ${al})`; cx.fill();
+    }
+    requestAnimationFrame(tick);
+  })();
+
+  // 鼠标视差：水印与飘带轻移
+  const wm = document.getElementById('wm');
+  hero.addEventListener('mousemove', e => {
+    const dx = (e.clientX / innerWidth - .5), dy = (e.clientY / innerHeight - .5);
+    wm.style.marginLeft = dx * 30 + 'px'; wm.style.marginTop = dy * 20 + 'px';
+    document.querySelectorAll('.ribbon').forEach((r, i) => {
+      r.style.translate = `${dx * (i ? -18 : 14)}px ${dy * (i ? -12 : 10)}px`;
+    });
+  });
+</script>
+</body>
+</html>
