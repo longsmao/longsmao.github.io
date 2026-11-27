@@ -1,5 +1,4 @@
-# 安装包走 Releases，不进分支
-download/
+# 安装包随站点分发（自有域名直链下载）
 download_bak/
 # 原始截图备份不入库
 images/backup_original/
