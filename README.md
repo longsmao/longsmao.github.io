@@ -67,7 +67,7 @@
 
 | 渠道 | 地址 |
 |:---|:---|
-| ⬇️ **安装包**（Windows 10/11 64 位） | <https://github.com/longsmao/longsmao.github.io/releases/latest> |
+| ⬇️ **安装包**（Windows 10/11 64 位） | <https://www.licbook.cn/download/licheng-setup-1.0.0.exe> |
 
 > 基于 Rust + Tauri 2 + WebView2 重构，安装包约 3.2 MB（旧版 Electron 约为 87 MB）。目标系统需 Windows 10 1809+ 或 Windows 11（内置 WebView2）。
 
