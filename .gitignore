@@ -1,0 +1,9 @@
+# 安装包走 Releases，不进分支
+download/
+download_bak/
+# 原始截图备份不入库
+images/backup_original/
+# 服务端脚本（含签发私钥）绝不上公开仓库
+server/
+node_modules/
+.DS_Store
